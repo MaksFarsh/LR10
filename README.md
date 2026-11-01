@@ -18,33 +18,7 @@
    * Переход на новую строку после завершения внутреннего цикла.
 6. Конец.
 
-## 2. Блок-схема
-
-```mermaid
-graph TD
-    Start((Начало)) --> Input[/Ввод x_mx, y_mx/]
-    Input --> CalcArea[Вызов square: расчет площади]
-    CalcArea --> PrintArea[/Вывод площади/]
-    PrintArea --> Draw[Вызов draw_figure]
-    
-    Draw --> LoopY{y >= 0?}
-    LoopY -- Да --> LoopX{x <= x_mx?}
-    LoopY -- Нет --> End((Конец))
-    
-    LoopX -- Да --> CalcBounds[Вычисление границ x1, x2, y1, y2]
-    CalcBounds --> CondCheck{Точка внутри границ?}
-    CondCheck -- Да --> PrintStar[Вывод '*']
-    CondCheck -- Нет --> PrintSpace[Вывод ' ']
-    
-    PrintStar --> IncX[x++]
-    PrintSpace --> IncX
-    IncX --> LoopX
-    
-    LoopX -- Нет --> NewLine[Вывод \n, y--]
-    NewLine --> LoopY
-```
-
-## 3. Реализация программы
+## 2. Реализация программы
 
 ```c
 #include <stdio.h>
@@ -97,7 +71,7 @@ int draw_figure(double x_mx, double y_mx) {
 }
 ```
 
-## 4. Результаты работы программы
+## 3. Результаты работы программы
 
 Программа вычисляет площадь фигуры, отсекая от прямоугольника два треугольника, и отрисовывает её в консоли.
 
@@ -117,6 +91,6 @@ int draw_figure(double x_mx, double y_mx) {
   ****
   *****
 ```
-## 5. Информация о разработчике
+## 4. Информация о разработчике
 
-[Ваше Имя], [Ваша группа]
+Кудрявцев Дмитрий, бИЦТ-261
