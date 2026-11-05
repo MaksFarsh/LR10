@@ -3,7 +3,7 @@
 #include <locale.h>
 #define _CRT_SECURE_NO_WARNINGS
 #define pi 3.14
-double square(double x_mx, double y_mx);
+double square_figure(double x_mx);
 
 void main() {
 	setlocale(LC_ALL, "RUS");
@@ -11,16 +11,15 @@ void main() {
 
 	puts("Введите абсциссу и ординату точки: ");
 	scanf("%lf", &x_mx);
-
-	printf("Площадь данной фигуры равна: %lf", square(x_mx, x_mx));
+	printf("Площадь данной фигуры равна: %lf", square_figure(x_mx));
 	printf("\n");
 	draw_figure(x_mx, x_mx);
 }
 
-double square(double x_mx) {
+double square_figure(double x_mx) {
 	double s_f , s_c, s_tr;
-	s_c = 1 / 4 * pi * x_mx;
-	s_tr = 1 / 2 * pow(3, 2);
+	s_c = (1.0 / 4.0) * pi * pow(x_mx,2);
+	s_tr = (1.0 / 2.0) * pow(3, 2);
 	s_f = s_c - s_tr;
 	return s_f;
 }
